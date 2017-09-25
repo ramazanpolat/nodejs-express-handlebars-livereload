@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+asd
+{{{body}}}
+
+<script>
+    var waitingToReconnect = false;
+    var socket = io(window.location.host);
+    socket.on('connect', function(){
+        if (waitingToReconnect)
+            location.reload();
+    });
+    socket.on('disconnect', function(){
+        waitingToReconnect = true;
+    });
+</script>
+
+</body>
+</html>

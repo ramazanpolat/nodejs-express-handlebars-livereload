@@ -1,0 +1,20 @@
+{
+  "name": "express-handlebars-livereload-with-socket-io",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "live": "supervisor -i .idea,views,cmake-build-debug,.git  bin/www.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "hbs": "~4.0.1",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2",
+    "socket.io": "^2.0.3",
+    "supervisor": "^0.12.0"
+  }
+}
