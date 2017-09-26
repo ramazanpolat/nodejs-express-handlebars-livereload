@@ -6,20 +6,11 @@
     <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-
 {{{body}}}
-
 <script>
-    var waitingToReconnect = false;
-    var socket = io(window.location.host);
-    socket.on('connect', function(){
-        if (waitingToReconnect)
-            location.reload();
-    });
-    socket.on('disconnect', function(){
-        waitingToReconnect = true;
+    io(window.location.host).on('disconnect', function(){
+        location.reload();
     });
 </script>
-
 </body>
 </html>
