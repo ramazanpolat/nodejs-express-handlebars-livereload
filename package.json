@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "live": "supervisor -i .idea,views,cmake-build-debug,.git  bin/www.js"
+    "live": "supervisor -i .idea,cmake-build-debug,.git  bin/www.js"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
