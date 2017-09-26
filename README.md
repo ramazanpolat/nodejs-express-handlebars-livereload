@@ -20,6 +20,14 @@ Express skeleton is created with [express-generator](https://expressjs.com/en/st
 
     npm run live
 
+Navigate to [localhost:3000](localhost:3000)
+
+While the web page is open, go and change a file (e.g. views/index.hbs) then save. 
+
+...and, voilà!
+
+Web page will be reloaded immediately. 
+
 # How does it work?
 
 It uses [supervisor](https://github.com/petruisfan/node-supervisor) to restart node on server side and [socket.io](https://github.com/socketio/socket.io) to reload page on client side.
