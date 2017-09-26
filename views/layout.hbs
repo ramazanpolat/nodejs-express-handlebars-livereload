@@ -20,8 +20,8 @@
     });
 
     /**
-     * This code is more efficient you can use this too instead of above.
-
+     * This code is more efficient, you can use this too instead of above.
+     * But it makes browser stop displaying page if the server goes down.
     io(window.location.host).on('disconnect', function(){
         location.reload();
     });*/
