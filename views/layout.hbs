@@ -8,9 +8,23 @@
 <body>
 {{{body}}}
 <script>
+
+    var waitingToReconnect = false;
+    var socket = io(window.location.host);
+    socket.on('connect', function(){
+        if (waitingToReconnect)
+            location.reload();
+    });
+    socket.on('disconnect', function(){
+        waitingToReconnect = true;
+    });
+
+    /**
+     * This code is more efficient you can use this too instead of above.
+
     io(window.location.host).on('disconnect', function(){
         location.reload();
-    });
+    });*/
 </script>
 </body>
 </html>
