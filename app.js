@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -22,11 +21,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-/*app.use('/',function (req, res, next) {
-    console.log('this is a middleware for express');
-    next(req,res,next);
-});*/
 
 app.use('/', index);
 app.use('/users', users);
@@ -48,17 +42,5 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
-
-/*var livereload = require('livereload').createServer({
-    exts: ['js', 'hbs', 'html']
-});
-
-livereload.watch(path.join(__dirname, '../views'));
-livereload.watch(path.join(__dirname, '../routes'));
-livereload.watch(path.join(__dirname, '../public'));*/
-//livereload = require('express-livereload');
-//livereload(app, {port:3000, watchDir:__dirname});
-
-
 
 module.exports = app;
